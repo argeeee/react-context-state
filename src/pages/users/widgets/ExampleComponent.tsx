@@ -8,13 +8,13 @@ interface ExampleComponentProps {
 const ExampleComponent: FC<ExampleComponentProps> = () => {
 	console.log('render: ExampleComponent');
 
-	const { state: usersPageState, emit } = useUsersPage();
+	const { state, emit } = useUsersPage();
 	
 	return (
 		<>
 			Ciao ExampleComponent!!!
 			<hr />
-			{ usersPageState.counter }
+			{ state.counter }
 			<hr />
 			<button onClick={() => emit(new IncrementEvent())} >
 				Increment

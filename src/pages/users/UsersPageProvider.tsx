@@ -1,5 +1,5 @@
 import { FC, ReactNode, createContext, useContext, useState } from "react";
-import { DecrementEvent, IncrementEvent, UsersPageEvent } from "./UsersPageEvents";
+import { ChangeNameEvent, DecrementEvent, IncrementEvent, UsersPageEvent } from "./UsersPageEvents";
 
 // --------------- Context ------------
 interface UsersPageContextType {
@@ -25,7 +25,8 @@ interface UsersPageProviderProps {
 
 export const UsersPageProvider: FC<UsersPageProviderProps> = ({ children }) => {
 	const [usersPageState, setUsersPageState] = useState<UsersPageState>({
-		counter: 0
+		counter: 0,
+		name: 'name',
 	});
 
 	return (
@@ -42,6 +43,12 @@ export const UsersPageProvider: FC<UsersPageProviderProps> = ({ children }) => {
 					return {
 						...prev,
 						counter: prev.counter - 1,
+					};
+				}
+				else if (event instanceof ChangeNameEvent) {
+					return {
+						...prev,
+						name: event.name,
 					};
 				}
 

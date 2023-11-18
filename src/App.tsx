@@ -1,9 +1,12 @@
 import UsersPage from "./pages/users/UsersPage"
+import { UsersPageProvider } from "./pages/users/UsersPageProvider"
 
 function App() {
   return (
     <>
-      <UsersPage />
+      <UsersPageProvider>
+        <UsersPage />
+      </UsersPageProvider>
     </>
   )
 }

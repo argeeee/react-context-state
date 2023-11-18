@@ -9,3 +9,12 @@ export class IncrementEvent extends UsersPageEvent {
 export class DecrementEvent extends UsersPageEvent {
 	// can add payload...
 }
+
+export class ChangeNameEvent extends UsersPageEvent {
+	name: string;
+
+	constructor(name: string) {
+		super();
+		this.name = name;
+	}
+}
