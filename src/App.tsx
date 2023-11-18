@@ -1,7 +1,9 @@
+import UsersPage from "./pages/users/UsersPage"
+
 function App() {
   return (
     <>
-      App
+      <UsersPage />
     </>
   )
 }
