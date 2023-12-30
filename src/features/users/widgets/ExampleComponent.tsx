@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { useUsersPage } from "../UsersPageProvider";
-import { DecrementEvent, IncrementEvent } from "../UsersPageEvents";
+import { useUsersStore } from "../UsersStoreProvider";
+import { ActionType } from "../store/UsersStore";
 
 interface ExampleComponentProps {
 }
@@ -8,18 +8,18 @@ interface ExampleComponentProps {
 const ExampleComponent: FC<ExampleComponentProps> = () => {
 	console.log('render: ExampleComponent');
 
-	const { state, emit } = useUsersPage();
+	const { state, dispatch } = useUsersStore();
 	
 	return (
 		<>
-			Ciao ExampleComponent!!!
+			Hi ExampleComponent!!!
 			<hr />
 			{ state.counter }
 			<hr />
-			<button onClick={() => emit(new IncrementEvent())} >
+			<button onClick={() => dispatch({ type: ActionType.Increment })} >
 				Increment
 			</button>
-			<button onClick={() => emit(new DecrementEvent())} >
+			<button onClick={() => dispatch({ type: ActionType.Decrement })} >
 				Decrement
 			</button>
 		</>

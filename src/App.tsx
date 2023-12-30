@@ -1,5 +1,5 @@
-import UsersPage from "./pages/users/UsersPage"
-import { UsersPageProvider } from "./pages/users/UsersPageProvider"
+import UsersPage from "./features/users/pages/UsersPage"
+import { UsersPageProvider } from "./features/users/UsersStoreProvider"
 
 function App() {
   return (

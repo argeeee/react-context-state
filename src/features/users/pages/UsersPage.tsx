@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { useUsersPage } from "./UsersPageProvider";
-import ExampleComponent from "./widgets/ExampleComponent";
+import ExampleComponent from "../widgets/ExampleComponent";
+import Comp from "../widgets/Comp";
 
 // --------------- Component ------------
 interface UsersPageProps {
@@ -9,16 +9,15 @@ interface UsersPageProps {
 const UsersPage: FC<UsersPageProps> = () => {
 	console.log('render: UsersPage');
 
-	const { state } = useUsersPage();
-
 	return (
 		<>
 			Users page
 			<br />
-			<ExampleComponent />
 
+			<ExampleComponent />
 			<hr />
-			User page again!! ---- { state.name }
+
+			<Comp />
 		</>
 	);
 }
